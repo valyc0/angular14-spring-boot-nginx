@@ -7,17 +7,16 @@ run
 ```sh
 yarn install
 ```
-to install
-run  
+then  
 ```sh
 yarn start
 ```
-to start in develop
-run 
+
+run   
 ```sh
 yarn build
 ``` 
-to build for prod
+to build for prod  
 
 change file app.module.ts comment line:  
 providers: [httpInterceptorProviders,fakeBackendProvider],  
