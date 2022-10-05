@@ -23,3 +23,15 @@ change file app.module.ts comment line:
 providers: [httpInterceptorProviders,fakeBackendProvider],
 and uncomment:
 providers: [httpInterceptorProviders,fakeBackendProvider],
+
+to start server java spring boot:
+```sh
+cd spring-boot-security-login/
+mvn spring-boot:run
+``` 
+
+to start nginx
+```sh
+cd nginx
+./install.sh
+``` 
