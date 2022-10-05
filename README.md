@@ -16,6 +16,10 @@ to start in develop
 run 
 ```sh
 yarn build
-``` to build for prod
+``` 
+to build for prod
 
-to 
+change file app.module.ts comment line:
+providers: [httpInterceptorProviders,fakeBackendProvider],
+and uncomment:
+providers: [httpInterceptorProviders,fakeBackendProvider],
