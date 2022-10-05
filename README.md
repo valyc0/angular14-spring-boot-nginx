@@ -4,10 +4,18 @@ to start web in fake response mode:
 
 
 run 
-`yarn install` to install
+```sh
+yarn install
+```
+to install
 run  
-`yarn start` to start in develop
+```sh
+yarn start
+```
+to start in develop
 run 
-`yarn build` to build for prod
+```sh
+yarn build
+``` to build for prod
 
 to 
