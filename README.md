@@ -19,10 +19,10 @@ yarn build
 ``` 
 to build for prod
 
-change file app.module.ts comment line:
-providers: [httpInterceptorProviders,fakeBackendProvider],
-and uncomment:
-providers: [httpInterceptorProviders,fakeBackendProvider],
+change file app.module.ts comment line:  
+providers: [httpInterceptorProviders,fakeBackendProvider],  
+and uncomment:  
+providers: [httpInterceptorProviders,fakeBackendProvider],  
 
 to start server java spring boot:
 ```sh
