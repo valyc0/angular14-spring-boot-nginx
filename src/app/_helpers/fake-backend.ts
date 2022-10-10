@@ -3,7 +3,16 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-const users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' }];
+const users = [{ id: 1, username: 'test', password: 'test', firstName: 'Test', lastName: 'User' },
+               { id: 2, username: 'pippo2', password: 'pippo12', firstName: 'pi2', lastName: 'pa2' },
+			   { id: 3, username: 'pippo3', password: 'pippo13', firstName: 'pi3', lastName: 'pa3' },
+			   { id: 4, username: 'pippo4', password: 'pippo14', firstName: 'pi4', lastName: 'pa4' },
+			   { id: 5, username: 'pippo5', password: 'pippo15', firstName: 'pi5', lastName: 'pa5' },
+			   { id: 6, username: 'pippo6', password: 'pippo16', firstName: 'pi6', lastName: 'pa6' },
+			   { id: 7, username: 'pippo7', password: 'pippo17', firstName: 'pi7', lastName: 'pa7' },
+			   { id: 8, username: 'pippo8', password: 'pippo18', firstName: 'pi8', lastName: 'pa8' }
+			   
+			  ];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -28,7 +37,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 case url.endsWith('/auth/signin') && method === 'POST':
                         return getLogin();     
                 case url.endsWith('/auth/signout') && method === 'POST':
-                        return getLogout();                                   
+                        return getLogout();    
+                case url.endsWith('/test/user') && method === 'GET':
+                        return getUsers();                                                 
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
@@ -51,7 +62,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         }
 
         function getUsers() {
-            if (!isLoggedIn()) return unauthorized();
+            //if (!isLoggedIn()) return unauthorized();
             return ok(users);
         }
 

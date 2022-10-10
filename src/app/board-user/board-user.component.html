@@ -1,5 +1,34 @@
 <div class="container">
   <header class="jumbotron">
-    <p>{{ content }}</p>
+    <p>prova</p>
   </header>
+  
+</div>
+
+<div class="card-body">
+  <h4 class="card-title">Dati</h4>
+  <p class="card-description"> prova table remote </p>
+  <div class="table-responsive">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th> # </th>
+          <th> username </th>
+          <th> password </th>
+          <th> firstname </th>
+          <th> lastname </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let user of content">
+          <td></td>
+          <td> {{user.username}}  </td>
+          <td> {{user.password}} </td>
+          <td> {{user.firstName}} </td>
+          <td> {{user.lastName}} </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
 </div>
