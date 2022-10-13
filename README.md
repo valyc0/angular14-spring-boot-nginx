@@ -1,5 +1,14 @@
 # angular14-spring-boot-nginx
 
+
+based on corona html template admin:
+
+https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template
+
+to keep note:
+
+https://github.com/BootstrapDash/corona-angular-free-admin-template
+
 to start web in fake response mode:
 
 
