@@ -15,6 +15,9 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  public iconOnlyToggled = false;
+  public sidebarToggled = false;
+  
 
   eventBusSub?: Subscription;
 
@@ -23,6 +26,27 @@ export class AppComponent {
     private authService: AuthService,
     private eventBusService: EventBusService
   ) {}
+
+
+  // toggle sidebar
+  toggleSidebar() {
+    let body = document.querySelector('body');
+    if((!body.classList.contains('sidebar-toggle-display')) && (!body.classList.contains('sidebar-absolute'))) {
+      this.iconOnlyToggled = !this.iconOnlyToggled;
+      if(this.iconOnlyToggled) {
+        body.classList.add('sidebar-icon-only');
+      } else {
+        body.classList.remove('sidebar-icon-only');
+      }
+    } else {
+      this.sidebarToggled = !this.sidebarToggled;
+      if(this.sidebarToggled) {
+        body.classList.add('sidebar-hidden');
+      } else {
+        body.classList.remove('sidebar-hidden');
+      }
+    }
+  }
 
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
