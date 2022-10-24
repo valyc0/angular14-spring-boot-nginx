@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
 
+declare let $: any;
+
 @Component({
   selector: 'app-board-user',
   templateUrl: './board-user.component.html',
@@ -9,13 +11,17 @@ import { UserService } from '../_services/user.service';
 export class BoardUserComponent implements OnInit {
   //content?: string;
   content?: any;
+  
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+
+    $('#modal-risorsa').modal('show');
     this.userService.getUserBoard().subscribe({
       next: data => {
         this.content = data;
+        $('#modal-risorsa').modal('toggle');
       },
       error: err => {
         if (err.error) {
